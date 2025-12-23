@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/Frontends/" />
+  <Folder Name="/IdentityServer/" />
+  <Folder Name="/Services/" />
+  <Folder Name="/Services/Basket/" />
+  <Folder Name="/Services/Catalog/">
+    <Project Path="Services/Catalog/Ecommerce.Catalog/Ecommerce.Catalog.csproj" />
+  </Folder>
+  <Folder Name="/Services/Discount/" />
+  <Folder Name="/Services/Order/" />
+</Solution>
