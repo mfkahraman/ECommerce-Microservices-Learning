@@ -1,6 +1,18 @@
+using Ecommerce.Catalog.Settings;
+using Microsoft.Extensions.Options;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+// Configure DatabaseSettings using the "DatabaseSettings" section from appsettings.json
+builder.Services.Configure<DatabaseSettings>(builder.Configuration.GetSection("DatabaseSettings"));
+
+
+builder.Services.AddSingleton<IDatabaseSettings>(sp =>
+{
+    return sp.GetRequiredService<IOptions<DatabaseSettings>>().Value;
+});
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
