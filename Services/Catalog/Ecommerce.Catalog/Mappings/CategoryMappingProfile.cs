@@ -8,8 +8,8 @@ namespace Ecommerce.Catalog.Mappings
     {
         public CategoryMappingProfile()
         {
-            CreateMap<Category, CreateCategoryDto>();
-            CreateMap<Category, UpdateCategoryDto>();
+            CreateMap<CreateCategoryDto, Category>();
+            CreateMap<UpdateCategoryDto, Category>();
             CreateMap<Category, GetCategoryDto>();
         }
     }
