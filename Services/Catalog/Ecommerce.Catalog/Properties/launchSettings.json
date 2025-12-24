@@ -24,7 +24,7 @@
       "dotnetRunMessages": true,
       "launchBrowser": true,
       "launchUrl": "swagger",
-      "applicationUrl": "https://localhost:7196;http://localhost:5244",
+      "applicationUrl": "https://localhost:7000;http://localhost:5244", // I set https port to 7000
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

@@ -1,3 +1,4 @@
+using AutoMapper;
 using Ecommerce.Catalog.Repositories;
 using Ecommerce.Catalog.Services.CategoryServices;
 using Ecommerce.Catalog.Services.ProductServices;
@@ -21,6 +22,10 @@ builder.Services.AddSingleton<IDatabaseSettings>(sp =>
 builder.Services.AddScoped(typeof(IRepository<>), typeof(GenericRepository<>));
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IProductService, ProductService>();
+
+// Automapper Registration (manual, for AutoMapper 16+)
+builder.Services.AddAutoMapper(cfg => { }, typeof(Program).Assembly);
+
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
