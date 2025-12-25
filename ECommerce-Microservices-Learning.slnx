@@ -6,6 +6,8 @@
   <Folder Name="/Services/Catalog/">
     <Project Path="Services/Catalog/Ecommerce.Catalog/Ecommerce.Catalog.csproj" />
   </Folder>
-  <Folder Name="/Services/Discount/" />
+  <Folder Name="/Services/Discount/">
+    <Project Path="Services/Discount/ECommerce.Discount/ECommerce.Discount.csproj" Id="68531d2b-8bb1-42c7-a751-b04edec72454" />
+  </Folder>
   <Folder Name="/Services/Order/" />
 </Solution>
