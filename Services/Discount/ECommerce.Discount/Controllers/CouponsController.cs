@@ -13,7 +13,7 @@ namespace ECommerce.Discount.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            var records = await context.Coupons.ToListAsync();
+            var records = await context.Coupons.AsNoTracking().ToListAsync();
             var values = records.Select(x => new ResultCouponDto
             {
                 CouponId = x.CouponId,
@@ -56,6 +56,31 @@ namespace ECommerce.Discount.Controllers
             context.Coupons.Add(entity);
             await context.SaveChangesAsync();
             return CreatedAtAction(nameof(GetById), new { id = entity.CouponId }, entity);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update(int id, UpdateCouponDto dto)
+        {
+            var entity = await context.Coupons.FindAsync(id);
+            if (entity == null)
+                return NotFound();
+            entity.Code = dto.Code;
+            entity.DiscountRate = dto.DiscountRate;
+            entity.ExpireDate = dto.ExpireDate;
+            entity.ProductId = dto.ProductId;
+            await context.SaveChangesAsync();
+            return Ok("Successfully updated");        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var entity = await context.Coupons.FindAsync(id);
+            if (entity == null)
+                return NotFound();
+
+            context.Coupons.Remove(entity);
+            await context.SaveChangesAsync();
+            return Ok($"Record with ID {id} successfully deleted.");
         }
     }
 }
