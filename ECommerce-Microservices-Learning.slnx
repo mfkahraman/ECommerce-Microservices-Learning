@@ -10,6 +10,16 @@
     <Project Path="Services/Discount/ECommerce.Discount/ECommerce.Discount.csproj" Id="68531d2b-8bb1-42c7-a751-b04edec72454" />
   </Folder>
   <Folder Name="/Services/Order/" />
+  <Folder Name="/Services/Order/Core/">
+    <Project Path="Services/Order/Core/ECommerce.Order.Application/ECommerce.Order.Application.csproj" Id="7c7abc2d-6a19-4dac-97a7-97631c0d4796" />
+    <Project Path="Services/Order/Core/ECommerce.Order.Domain/ECommerce.Order.Domain.csproj" Id="ad145326-e34c-49ca-a422-aac7cfe396c0" />
+  </Folder>
+  <Folder Name="/Services/Order/Infrastructure/">
+    <Project Path="Services/Order/Infrastructure/ECommerce.Order.Persistence/ECommerce.Order.Persistence.csproj" Id="6bda1ed6-4178-4da1-8248-1d7a4cbbcf3a" />
+  </Folder>
+  <Folder Name="/Services/Order/Presentation/">
+    <Project Path="Services/Order/Presentation/ECommerce.Order.API/ECommerce.Order.API.csproj" Id="733a2d0a-ef89-4e2f-b081-c57d62ae2d56" />
+  </Folder>
   <Folder Name="/Shared/">
     <File Path="Ports.txt" />
   </Folder>
