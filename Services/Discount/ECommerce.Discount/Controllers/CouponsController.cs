@@ -139,9 +139,18 @@ namespace ECommerce.Discount.Controllers
                 if (entity == null)
                     return NotFound();
 
+                var resultDto = new ResultCouponDto
+                {
+                    CouponId = entity.CouponId,
+                    Code = entity.Code,
+                    DiscountRate = entity.DiscountRate,
+                    ExpireDate = entity.ExpireDate,
+                    ProductId = entity.ProductId
+                };
+
                 context.Coupons.Remove(entity);
                 await context.SaveChangesAsync(cancellationToken);
-                return Ok(new { message = $"Record with ID {id} successfully deleted." });
+                return Ok(resultDto);
             }
             catch (Exception ex)
             {
